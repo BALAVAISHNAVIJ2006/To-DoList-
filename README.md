@@ -171,22 +171,6 @@ taskmaster-pro/
 └── README.md           # This documentation file
 ```
 
-### Data Storage
-
-Tasks are stored in **localStorage** as JSON with this structure:
-
-```javascript
-{
-  id: 1234567890,              // Unique timestamp ID
-  text: "Task description",    // Task text
-  completed: false,            // Completion status
-  priority: "medium",          // Priority: low/medium/high
-  category: "work",            // Category: work/personal/urgent
-  dueDate: "2024-12-15",      // Optional due date
-  dueTime: "14:30",           // Optional due time
-  createdAt: "2024-12-06..."  // Creation timestamp
-}
-```
 
 ---
 
@@ -473,8 +457,3 @@ Special thanks to:
 
 Stay organized, stay productive! ✨📝✅
 
----
-
-*Last Updated: December 2024*  
-*Version: 1.0.0*  
-*Status: Active*
