@@ -3,55 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A modern to-do list application to manage your daily tasks">
-    <meta name="author" content="Your Name">
-    <title>To-Do List App</title>
+    <meta name="description" content="TaskMaster Pro - A modern, feature-rich to-do list application">
+    <meta name="keywords" content="todo, task manager, productivity, task list">
+    <meta name="author" content="TaskMaster Pro">
+    <title>TaskMaster Pro - Advanced To-Do List</title>
     
-    <!-- Link to external CSS file -->
+    <!-- Link to external CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Main Container -->
-    <div class="container">
+    <!-- Main Application Container -->
+    <div class="app-container">
         <!-- Header Section -->
-        <h1>✓ My Tasks</h1>
-        
-        <!-- Statistics Display -->
-        <div class="stats">
-            <span id="totalTasks">0</span> total · 
-            <span id="activeTasks">0</span> active · 
-            <span id="completedTasks">0</span> completed
+        <div class="header">
+            <h1>✨ TaskMaster Pro</h1>
+            <p>Organize your life with style and efficiency</p>
         </div>
 
-        <!-- Task Input Section -->
-        <div class="input-section">
-            <input 
-                type="text" 
-                id="taskInput" 
-                placeholder="What needs to be done?"
-                autocomplete="off"
-                aria-label="New task input"
-            >
-            <button id="addBtn" aria-label="Add new task">Add</button>
+        <!-- Top Controls -->
+        <div class="controls">
+            <button class="view-toggle" onclick="toggleKeyboardHelp()" aria-label="Toggle keyboard shortcuts">
+                ⌨️ Shortcuts
+            </button>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                🌓 Theme
+            </button>
         </div>
 
-        <!-- Filter Buttons -->
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="active">Active</button>
-            <button class="filter-btn" data-filter="completed">Completed</button>
-        </div>
+        <!-- Main Card Container -->
+        <div class="main-card">
+            <!-- Progress Bar Section -->
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+            </div>
 
-        <!-- Task List -->
-        <ul id="taskList" role="list"></ul>
+            <!-- Statistics Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number" id="totalTasks">0</div>
+                    <div class="label">Total Tasks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="completedTasks">0</div>
+                    <div class="label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number" id="activeTasks">0</div>
+                    <div class="label">Active</div>
+                </div>
+            </div>
 
-        <!-- Clear Completed Section (hidden by default) -->
-        <div class="clear-completed" id="clearSection" style="display: none;">
-            <button id="clearCompletedBtn">Clear Completed</button>
+            <!-- Task Input Section -->
+            <div class="input-section">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    placeholder="What needs to be done? (Press Enter to add)"
+                    autocomplete="off"
+                    aria-label="New task input"
+                >
+                <div class="input-row-2">
+                    <select id="prioritySelect" aria-label="Select priority">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <select id="categorySelect" aria-label="Select category">
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                    <input type="date" id="dueDateInput" aria-label="Due date">
+                    <input type="time" id="dueTimeInput" aria-label="Due time">
+                    <button id="addBtn" aria-label="Add task">Add Task</button>
+                </div>
+            </div>
+
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="🔍 Search tasks..."
+                    aria-label="Search tasks"
+                >
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                    <button class="filter-btn" data-filter="high">High Priority</button>
+                </div>
+            </div>
+
+            <!-- Task List -->
+            <ul id="taskList" role="list"></ul>
+
+            <!-- Keyboard Shortcuts Help -->
+            <div class="keyboard-shortcuts" id="keyboardHelp" style="display: none;">
+                <h4>⌨️ Keyboard Shortcuts</h4>
+                <div class="shortcut">
+                    <span>Add task</span>
+                    <span class="key">Enter</span>
+                </div>
+                <div class="shortcut">
+                    <span>Focus search</span>
+                    <span class="key">Ctrl + F</span>
+                </div>
+                <div class="shortcut">
+                    <span>Toggle theme</span>
+                    <span class="key">Ctrl + D</span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Link to external JavaScript file -->
+    <!-- Link to external JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
