@@ -892,6 +892,3 @@ Use this guide as a reference and don't hesitate to experiment with features.
 
 ---
 
-*Last Updated: December 2024*  
-*Version: 1.0.0*  
-*For more info, see README.md*
